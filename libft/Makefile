@@ -6,7 +6,7 @@
 #    By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:01:04 by paugonca          #+#    #+#              #
-#    Updated: 2023/02/09 15:07:54 by paugonca         ###   ########.fr        #
+#    Updated: 2023/02/09 15:49:49 by paugonca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,6 @@ RM	= rm -rf
 MV	= mv
 MKD	= mkdir
 CPY	= cp
-PRINT	= printf
 
 #------------------------------ DIRECTORIES -----------------------------------#
 
@@ -38,7 +37,8 @@ AR	= ar rcs
 #---------------------------------- FILES -------------------------------------#
 
 FILES	=		ft_atoi.c \
-				ft_isdigit.c
+				ft_isdigit.c \
+				ft_putstr.c
 
 SRCS	=		$(addprefix $(_SRC), $(FILES))
 OBJS	=		$(patsubst $(_SRC)%.c,$(_OBJ)%.o,$(SRCS))

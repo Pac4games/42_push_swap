@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 10:44:13 by paugonca          #+#    #+#             */
-/*   Updated: 2023/02/09 14:32:44 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/02/09 16:17:15 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,15 +83,15 @@ int	check_args(int ac, char **av)
 int	main(int ac, char **av)
 {
 	if (ac < 3)
-		ft_printf("Not enough args\n");
+		printf("Not enough args\n");
 	else if (!check_nums(ac, av))
-		ft_printf("Not all args are numbers\n");
+		printf("Not all args are numbers\n");
 	else if (!check_limit(ac, av))
-		ft_printf("Args exceeded the int limit\n");
+		printf("Args exceeded the int limit\n");
 	else if (!check_dups(ac, av))
-		ft_printf("Dupped args, you dirty hacker\n");
+		printf("Dupped args, you dirty hacker\n");
 	else
-		ft_printf("The args are valid!\n");
+		printf("The args are valid!\n");
 	return (0);
 }
 */

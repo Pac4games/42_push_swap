@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:31:06 by paugonca          #+#    #+#             */
-/*   Updated: 2023/02/09 14:28:54 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/02/09 16:14:55 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
-# include "../ft_printf/ft_printf.h"
 # include <limits.h>
 # include <unistd.h>
 

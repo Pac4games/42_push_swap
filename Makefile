@@ -6,7 +6,7 @@
 #    By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 14:16:55 by paugonca          #+#    #+#              #
-#    Updated: 2023/02/09 14:53:17 by paugonca         ###   ########.fr        #
+#    Updated: 2023/02/09 16:22:27 by paugonca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,3 +38,25 @@ SRC 	= $(_SRC)/main.c \
 
 OBJS 	= $(patsubst $(_SRC)%.c,$(_OBJ)%.o,$(SRCS))
 DEPS	= $(_BIN)/libs/libft.a
+LIBS	= -lft
+
+##### DEPENDENCIES #####
+
+./libs/libft.a:
+	$(MKE) -C libft/
+
+##### STRUCTURE #####
+
+$(_BIN):
+	$(MKD) $(_BIN)libs/libft.a
+
+clean:
+	$(RMV) -r $(_OBJ)
+
+fclean: clean
+	$(RMV) -r $(NAME)
+	$(RMV) -r $(_LIB)libft.a
+
+re: fclean all
+
+.PHONY: all deps clean fclean re
