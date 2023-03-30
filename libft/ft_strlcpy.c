@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 16:31:06 by paugonca          #+#    #+#             */
-/*   Updated: 2023/03/30 16:10:40 by paugonca         ###   ########.fr       */
+/*   Created: 2022/10/12 15:33:42 by paugonca          #+#    #+#             */
+/*   Updated: 2022/10/12 23:47:06 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "../libft/libft.h"
-# include <limits.h>
-# include <unistd.h>
-# include <stdio.h>
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t	p;
+	size_t	i;
 
-# define TRUE 1
-# define FALSE 0
-
-//check_args.c
-int	check_nums(int ac, char **av);
-int	check_limit(int ac, char **av);
-int	check_dups(int ac, char **av);
-int	check_args(int ac, char **av);
-
-#endif
+	p = ft_strlen(src);
+	i = 0;
+	if (size == 0)
+		return (p);
+	while (src[i] && i < (size - 1))
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (p);
+}

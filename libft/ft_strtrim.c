@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 16:31:06 by paugonca          #+#    #+#             */
-/*   Updated: 2023/03/30 16:10:40 by paugonca         ###   ########.fr       */
+/*   Created: 2022/10/14 22:00:49 by paugonca          #+#    #+#             */
+/*   Updated: 2022/10/14 22:08:19 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "../libft/libft.h"
-# include <limits.h>
-# include <unistd.h>
-# include <stdio.h>
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	p;
 
-# define TRUE 1
-# define FALSE 0
-
-//check_args.c
-int	check_nums(int ac, char **av);
-int	check_limit(int ac, char **av);
-int	check_dups(int ac, char **av);
-int	check_args(int ac, char **av);
-
-#endif
+	if (!s1 || !set)
+		return (0);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	p = ft_strlen(s1);
+	while (p && ft_strchr(set, s1[p]))
+		p--;
+	return (ft_substr(s1, 0, p + 1));
+}

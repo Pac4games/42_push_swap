@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 16:31:06 by paugonca          #+#    #+#             */
-/*   Updated: 2023/03/30 16:10:40 by paugonca         ###   ########.fr       */
+/*   Created: 2022/10/14 20:18:40 by paugonca          #+#    #+#             */
+/*   Updated: 2022/10/20 13:47:16 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "../libft/libft.h"
-# include <limits.h>
-# include <unistd.h>
-# include <stdio.h>
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*res;
+	size_t	p;
+	size_t	strlen;
 
-# define TRUE 1
-# define FALSE 0
-
-//check_args.c
-int	check_nums(int ac, char **av);
-int	check_limit(int ac, char **av);
-int	check_dups(int ac, char **av);
-int	check_args(int ac, char **av);
-
-#endif
+	if (!s)
+		return (0);
+	p = 0;
+	strlen = ft_strlen(s);
+	if (len > strlen)
+		len = strlen + 1;
+	res = (char *)malloc(len + 1);
+	if (!res)
+		return (0);
+	while (start < strlen && p < len)
+	{
+		res[p] = s[start];
+		start++;
+		p++;
+	}
+	res[p] = '\0';
+	return (res);
+}

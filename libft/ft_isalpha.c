@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 16:31:06 by paugonca          #+#    #+#             */
-/*   Updated: 2023/03/30 16:10:40 by paugonca         ###   ########.fr       */
+/*   Created: 2022/10/11 12:50:43 by paugonca          #+#    #+#             */
+/*   Updated: 2022/10/11 18:02:00 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "../libft/libft.h"
-# include <limits.h>
-# include <unistd.h>
-# include <stdio.h>
-
-# define TRUE 1
-# define FALSE 0
-
-//check_args.c
-int	check_nums(int ac, char **av);
-int	check_limit(int ac, char **av);
-int	check_dups(int ac, char **av);
-int	check_args(int ac, char **av);
-
-#endif
+int	ft_isalpha(int c)
+{
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	return (0);
+}

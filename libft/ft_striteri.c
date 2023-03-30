@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 15:50:06 by paugonca          #+#    #+#             */
-/*   Updated: 2023/02/09 15:56:39 by paugonca         ###   ########.fr       */
+/*   Created: 2022/10/18 17:46:07 by paugonca          #+#    #+#             */
+/*   Updated: 2022/10/19 18:14:57 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(const char *str)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int	p;
 
 	p = 0;
-	while (str[p])
-		write(1, &str[p++], 1);
+	if (s && f)
+	{
+		while (s[p])
+		{
+			f(p, &s[p]);
+			p++;
+		}
+	}
 }

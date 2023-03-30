@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 16:31:06 by paugonca          #+#    #+#             */
-/*   Updated: 2023/03/30 16:10:40 by paugonca         ###   ########.fr       */
+/*   Created: 2022/10/26 19:07:16 by paugonca          #+#    #+#             */
+/*   Updated: 2022/10/27 12:43:21 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "../libft/libft.h"
-# include <limits.h>
-# include <unistd.h>
-# include <stdio.h>
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*res;
+	t_list	*mem;
 
-# define TRUE 1
-# define FALSE 0
-
-//check_args.c
-int	check_nums(int ac, char **av);
-int	check_limit(int ac, char **av);
-int	check_dups(int ac, char **av);
-int	check_args(int ac, char **av);
-
-#endif
+	if (!lst || !f || !del)
+		return (0);
+	res = 0;
+	while (lst)
+	{
+		mem = ft_lstnew(f(lst->content));
+		if (!mem)
+		{
+			ft_lstclear(&res, del);
+			return (0);
+		}
+		ft_lstadd_back(&res, mem);
+		lst = lst->next;
+	}
+	return (res);
+}

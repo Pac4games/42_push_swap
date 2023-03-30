@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 16:31:06 by paugonca          #+#    #+#             */
-/*   Updated: 2023/03/30 16:10:40 by paugonca         ###   ########.fr       */
+/*   Created: 2022/10/14 21:27:26 by paugonca          #+#    #+#             */
+/*   Updated: 2022/10/14 21:54:55 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "../libft/libft.h"
-# include <limits.h>
-# include <unistd.h>
-# include <stdio.h>
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*res;
+	size_t	p;
+	size_t	i;
 
-# define TRUE 1
-# define FALSE 0
-
-//check_args.c
-int	check_nums(int ac, char **av);
-int	check_limit(int ac, char **av);
-int	check_dups(int ac, char **av);
-int	check_args(int ac, char **av);
-
-#endif
+	if (!s1 || !s2)
+		return (0);
+	res = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!res)
+		return (0);
+	p = 0;
+	i = 0;
+	while (s1[p])
+		res[i++] = s1[p++];
+	p = 0;
+	while (s2[p])
+		res[i++] = s2[p++];
+	res[i] = '\0';
+	return (res);
+}

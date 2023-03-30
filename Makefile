@@ -5,58 +5,50 @@
 #                                                     +:+ +:+         +:+      #
 #    By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/09 14:16:55 by paugonca          #+#    #+#              #
-#    Updated: 2023/02/09 16:22:27 by paugonca         ###   ########.fr        #
+#    Created: 2023/03/30 15:36:54 by paugonca          #+#    #+#              #
+#    Updated: 2023/03/30 16:14:12 by paugonca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-##### PROGRAM #####
+NAME		= push_swap
 
-NAME	= push_swap
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror
 
-##### TERMINAL COMMANDS #####
+RM			= rm -f
+MKD			= mkdir
 
-RMV		= rm -f
-MKD		= mkdir
-MKE 	= make
-CPY 	= cp
+SRC_NAME	= main.c		\
+			  check_args.c
 
-##### DIRECTORIES #####
+SRC			= $(addprefix $(SRC_PATH)/, $(SRC_NAME))
+OBJ			= $(patsubst $(SRC_PATH)/%.c, $(OBJ_PATH)/%.o, $(SRC))
+DEPS		= ./libft/libft.a
 
-_SRC 	= src/
-_OBJ 	= obj/
-_LIB 	= libs/
-_BIN 	= ./
+SRC_PATH	= ./src
+OBJ_PATH	= ./obj
 
-##### COMPILING #####
+all: $(NAME)
 
-CC 		= cc
-CFLAGS 	= -Wall -Wextra -Werror -g
+$(OBJ_PATH)/%.o : $(SRC_PATH)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+$(NAME): $(DEPS) $(OBJ_PATH) $(OBJ)
+		$(CC) $(CFLAGS) $(OBJ) $(DEPS) -o $(NAME)
 
-SRC 	= $(_SRC)/main.c \
-		  $(_SRC)/check_args.c
+LIBFT_PATH	= ./libft
+./libft/libft.a: $(shell make -C $(LIBFT_PATH) -q libft.a)
 
-OBJS 	= $(patsubst $(_SRC)%.c,$(_OBJ)%.o,$(SRCS))
-DEPS	= $(_BIN)/libs/libft.a
-LIBS	= -lft
-
-##### DEPENDENCIES #####
-
-./libs/libft.a:
-	$(MKE) -C libft/
-
-##### STRUCTURE #####
-
-$(_BIN):
-	$(MKD) $(_BIN)libs/libft.a
+$(OBJ_PATH):
+	$(MKD) -p obj
 
 clean:
-	$(RMV) -r $(_OBJ)
+	make clean -C $(LIBFT_PATH)
+	$(RM) -r $(OBJ_PATH)
 
 fclean: clean
-	$(RMV) -r $(NAME)
-	$(RMV) -r $(_LIB)libft.a
+	make fclean -C $(LIBFT_PATH)
+	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all deps clean fclean re
+.PHONY: all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:21:03 by paugonca          #+#    #+#             */
-/*   Updated: 2023/02/03 16:07:18 by paugonca         ###   ########.fr       */
+/*   Updated: 2022/10/11 18:11:13 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isdigit(int c)
 {
-	if (c >= '0' && c <= '9')
+	if (c >= 48 && c <= 57)
 		return (1);
 	return (0);
 }
