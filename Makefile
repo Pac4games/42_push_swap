@@ -6,7 +6,7 @@
 #    By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/30 15:36:54 by paugonca          #+#    #+#              #
-#    Updated: 2023/03/30 16:14:12 by paugonca         ###   ########.fr        #
+#    Updated: 2023/04/04 15:17:08 by paugonca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,10 +33,11 @@ all: $(NAME)
 $(OBJ_PATH)/%.o : $(SRC_PATH)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 $(NAME): $(DEPS) $(OBJ_PATH) $(OBJ)
-		$(CC) $(CFLAGS) $(OBJ) $(DEPS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) $(DEPS) -o $(NAME)
 
 LIBFT_PATH	= ./libft
 ./libft/libft.a: $(shell make -C $(LIBFT_PATH) -q libft.a)
+	make bonus -C $(LIBFT_PATH)
 
 $(OBJ_PATH):
 	$(MKD) -p obj
