@@ -6,17 +6,17 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:16:33 by paugonca          #+#    #+#             */
-/*   Updated: 2023/04/27 15:16:21 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:38:26 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*stack_create(int num)
+t_list	*stack_create(int num)
 {
-	t_stack	*res;
+	t_list	*res;
 
-	res = malloc(sizeof(t_stack));
+	res = malloc(sizeof(t_list));
 	if (!res)
 		return (NULL);
 	res->content = num;
@@ -25,9 +25,9 @@ t_stack	*stack_create(int num)
 	return (res);
 }
 
-t_stack	*stack_putval(int ac, char **av)
+t_list	*stack_putval(int ac, char **av)
 {
-	t_stack	*res;
+	t_list	*res;
 	long	num;
 	int		p;
 

@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 18:44:26 by paugonca          #+#    #+#             */
-/*   Updated: 2023/04/27 15:54:48 by paugonca         ###   ########.fr       */
+/*   Created: 2023/04/27 15:40:29 by paugonca          #+#    #+#             */
+/*   Updated: 2023/04/27 17:44:37 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstdelone(t_list *lst)
+void	sort_start(t_list **stack_a, t_list **stack_b, int size)
 {
-	//Tweaked version for this project
-	if (!lst)
+	if (is_sorted(stack_a))
 		return ;
-	free(lst);
+}
+
+int	is_sorted(t_list **stack)
+{
+	t_list	*tmp;
+
+	tmp = *stack;
+	while (tmp->next)
+	{
+		if (tmp->content > tmp->next->content)
+			return (FALSE);
+		tmp = tmp->next;
+	}
+	return (TRUE);
 }

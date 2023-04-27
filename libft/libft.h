@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 11:25:39 by paugonca          #+#    #+#             */
-/*   Updated: 2022/10/28 11:26:00 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:55:12 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+//Adaptated for stacks in push_swap
 typedef struct s_list
 {
-	void			*content;
+	int			content;
+	int				index;
 	struct s_list	*next;
 }					t_list;
 
@@ -61,8 +63,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 //Bonus functions
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
-void	ft_lstclear(t_list **lst, void (*del)(void *));
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst);
+void	ft_lstdelone(t_list *lst);
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
