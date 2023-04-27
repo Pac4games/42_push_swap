@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:31:06 by paugonca          #+#    #+#             */
-/*   Updated: 2023/04/26 14:58:36 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:20:08 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,8 @@ int			check_dups(int ac, char **av);
 int			check_args(int ac, char **av);
 //extra_utils.c
 long long	ft_atoll(const char *num);
+//stack_utils.c
+t_stack		*stack_putval(int ac, char **av);
+t_stack		*stack_create(int num);
 
 #endif
