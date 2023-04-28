@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:45:57 by paugonca          #+#    #+#             */
-/*   Updated: 2023/04/26 15:02:08 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/04/28 20:42:59 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,42 @@ long long	ft_atoll(const char *num)
 		p--;
 	}
 	return (res * sign);
+}
+
+int	get_max_int(t_list *stack)
+{
+	int	max;
+
+	max = stack->content;
+	while (stack)
+	{
+		if (stack->content > max)
+			max = stack->content;
+		stack = stack->next;
+	}
+	return (max);
+}
+
+int	get_min_int(t_list *stack)
+{
+	t_list	*tmp;
+	t_list	*min;
+	int		p;
+
+	tmp = stack;
+	min = stack;
+	p = 0;
+	while (tmp)
+	{
+		if (min->content > tmp->content)
+			min = tmp;
+		tmp = tmp->next;
+	}
+	tmp = stack;
+	while (tmp != min)
+	{
+		p++;
+		tmp = tmp->next;
+	}
+	return (p);
 }

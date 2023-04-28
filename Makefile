@@ -6,7 +6,7 @@
 #    By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/30 15:36:54 by paugonca          #+#    #+#              #
-#    Updated: 2023/04/28 16:03:10 by paugonca         ###   ########.fr        #
+#    Updated: 2023/04/28 20:41:08 by paugonca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,11 +21,11 @@ MKD			= mkdir
 SRC_NAME	= main.c			\
 			  check_args.c		\
 			  extra_utils.c		\
-			  num_utils.c		\
 			  sort_utils.c		\
 			  stack_utils.c		\
 			  swap_utils.c		\
-			  rotate_utils.c
+			  rotate_utils.c	\
+			  r_rotate_utils.c
 
 SRC			= $(addprefix $(SRC_PATH)/, $(SRC_NAME))
 OBJ			= $(patsubst $(SRC_PATH)/%.c, $(OBJ_PATH)/%.o, $(SRC))

@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:16:33 by paugonca          #+#    #+#             */
-/*   Updated: 2023/04/27 15:38:26 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/04/28 20:49:21 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,28 @@ t_list	*stack_putval(int ac, char **av)
 		p++;
 	}
 	return (res);
+}
+
+void	stack_check_pos(t_list **stack_a, t_list **stack_b, int p, int i)
+{
+	if (p > 2)
+	{
+		if (i == 1)
+			p = 5 - p;
+		else
+			p = 4 - p;
+		while (p != 0)
+		{
+			r_rotate_a(stack_a);
+			p--;
+		}
+	}
+	else
+	{
+		while (p)
+		{
+			rotate_a(stack_a);
+			p--;
+		}
+	}
 }
