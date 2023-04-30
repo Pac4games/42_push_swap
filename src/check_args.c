@@ -6,13 +6,13 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 10:44:13 by paugonca          #+#    #+#             */
-/*   Updated: 2023/02/09 16:17:15 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/04/30 14:52:26 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_nums(int ac, char **av)
+static int	check_nums(int ac, char **av)
 {
 	int	p;
 	int	i;
@@ -34,7 +34,7 @@ int	check_nums(int ac, char **av)
 	return (1);
 }
 
-int	check_limit(int ac, char **av)
+static int	check_limit(int ac, char **av)
 {
 	int	p;
 
@@ -48,7 +48,7 @@ int	check_limit(int ac, char **av)
 	return (1);
 }
 
-int	check_dups(int ac, char **av)
+static int	check_dups(int ac, char **av)
 {
 	int	p;
 	int	i;

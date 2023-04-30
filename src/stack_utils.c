@@ -6,13 +6,13 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:16:33 by paugonca          #+#    #+#             */
-/*   Updated: 2023/04/28 20:49:21 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/04/30 15:59:54 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*stack_create(int num)
+staic t_list	*stack_create(int num)
 {
 	t_list	*res;
 
@@ -46,6 +46,44 @@ t_list	*stack_putval(int ac, char **av)
 	return (res);
 }
 
+static t_list	*get_next_min(t_list **stack)
+{
+	t_list	*tmp;
+	t_list	*res;
+	int		is_min;
+
+	tmp = *stack;
+	res = NULL;
+	is_min = 0;
+	if (tmp)
+	{
+		while (tmp)
+		{
+			if (tmp->index == -1 && (!is_min || (tmp->content < res->content)))
+			{
+				res = tmp;
+				is_min = TRUE;
+			}
+			tmp = tmp->next;
+		}
+	}
+	return (res);
+}
+
+void	stack_get_index(t_list **stack)	
+{
+	t_list	*tmp;
+	int		p;
+
+	p = 0;
+	tmp = get_next_min(stack);
+	while (tmp)
+	{
+		tmp->index++;
+		tmp = get_next_min(stack);
+	}
+}
+
 void	stack_check_pos(t_list **stack_a, t_list **stack_b, int p, int i)
 {
 	if (p > 2)
@@ -68,4 +106,5 @@ void	stack_check_pos(t_list **stack_a, t_list **stack_b, int p, int i)
 			p--;
 		}
 	}
+	push_b(stack_a, stack_b);
 }

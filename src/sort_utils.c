@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:40:29 by paugonca          #+#    #+#             */
-/*   Updated: 2023/04/28 20:27:31 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/04/30 15:56:27 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,42 @@ static void	sort_4t5(t_list **stack_a, t_list **stack_b, int size)
 	if (size == 5)
 	{
 		tmp = *stack_a;
+		min = get_min_int(tmp);
+		stack_check_pos(stack_a, stack_b, min, 1);
+	}
+	tmp = *stack_a;
+	min = get_min_int(tmp);
+	stack_check_pos(stack_a, stack_b, min, 2);
+	if (!is_sorted(stack_a))
+		sort_3(stack_a);
+	while (*stack_b)
+		push_a(stack_a, stack_b);
+}
+
+static void	sort_5plus(t_list **stack_a, t_list **stack_b, size_t size)
+{
+	size_t	p;
+	size_t	i;
+
+	p = 0;
+	while (!is_sorted(stack_a))
+	{
+		i = 0;
+		while (i < size)
+		{
+			if ((*stack_a)->index >> p & 1)
+				rotate_a(stack_a);
+			else
+				push_b(stack_a, stack_b);
+			i++;
+		}
+		while (*stack_b)
+			push_a(stack_a, stack_b);
+		p++;
 	}
 }
 
-void	sort_start(t_list **stack_a, t_list **stack_b, int size)
+void	sort_start(t_list **stack_a, t_list **stack_b, size_t size)
 {
 	if (is_sorted(stack_a))
 		return ;
@@ -68,7 +100,10 @@ void	sort_start(t_list **stack_a, t_list **stack_b, int size)
 	}
 	else if (size == 4 || size == 5)
 	{
-		
+		sort_4t5(stack_a, stack_b, size);
+		is_sorted(stack_a);
 	}
+	else if (size > 5)
+		sort_5plus(stack_a, stack_b, size);
 }
 
