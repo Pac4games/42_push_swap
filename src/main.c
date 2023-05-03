@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 14:29:14 by paugonca          #+#    #+#             */
-/*   Updated: 2023/05/03 12:15:09 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:50:09 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	main(int ac, char **av)
 	print_list(&stack_a);
 	stack_b = NULL;
 	sort_start(&stack_a, &stack_b, ft_lstsize(stack_a));
-	print_list(&stack_a);
 	ft_lstclear(&stack_a);
 	ft_lstclear(&stack_b);
 	return (EXIT_SUCCESS);

@@ -6,14 +6,14 @@
 #    By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/30 15:36:54 by paugonca          #+#    #+#              #
-#    Updated: 2023/05/03 16:17:56 by paugonca         ###   ########.fr        #
+#    Updated: 2023/05/03 16:54:55 by paugonca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= push_swap
 
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -g -fsanitize=address
 
 RM			= rm -f
 MKD			= mkdir

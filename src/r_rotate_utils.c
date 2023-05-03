@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 19:32:47 by paugonca          #+#    #+#             */
-/*   Updated: 2023/04/28 19:45:32 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:01:28 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ static void	r_rotate(t_list **stack)
 	if (!stack || !(*stack)->next)
 		return ;
 	top = *stack;
-	bot = ft_lstlast(*stack);
+	bot = *stack;
+	while (bot->next->next)
+		bot = bot->next;
 	*stack = bot->next;
 	bot->next = NULL;
 	(*stack)->next = top;
@@ -28,16 +30,12 @@ static void	r_rotate(t_list **stack)
 
 void	r_rotate_a(t_list **stack_a)
 {
-	if (!(*stack_a) || !(*stack_a)->next)
-		return ;
 	r_rotate(stack_a);
 	ft_putstr_fd("rra\n", 1);
 }
 
 void	r_rotate_b(t_list **stack_b)
 {
-	if (!(*stack_b) || !(*stack_b)->next)
-		return ;
 	r_rotate(stack_b);
 	ft_putstr_fd("rrb\n", 1);
 }

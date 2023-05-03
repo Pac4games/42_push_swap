@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:40:29 by paugonca          #+#    #+#             */
-/*   Updated: 2023/05/03 16:21:34 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:47:37 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ static void	sort_4t5(t_list **stack_a, t_list **stack_b, int size)
 	t_list	*tmp;
 	int		min;
 
+	printf("stack_a size: %d\n", size);
 	if (size == 5)
 	{
 		tmp = *stack_a;
@@ -97,4 +98,3 @@ void	sort_start(t_list **stack_a, t_list **stack_b, size_t size)
 	else if (size > 5)
 		sort_5plus(stack_a, stack_b, size);
 }
-
