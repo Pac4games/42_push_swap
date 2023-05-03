@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:40:29 by paugonca          #+#    #+#             */
-/*   Updated: 2023/04/30 15:56:27 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:21:34 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,20 +89,11 @@ void	sort_start(t_list **stack_a, t_list **stack_b, size_t size)
 	if (is_sorted(stack_a))
 		return ;
 	if (size == 2)
-	{
 		swap_a(stack_a);
-		is_sorted(stack_a);
-	}
 	else if (size == 3)
-	{
 		sort_3(stack_a);
-		is_sorted(stack_a);
-	}
 	else if (size == 4 || size == 5)
-	{
 		sort_4t5(stack_a, stack_b, size);
-		is_sorted(stack_a);
-	}
 	else if (size > 5)
 		sort_5plus(stack_a, stack_b, size);
 }

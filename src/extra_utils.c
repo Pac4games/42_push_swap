@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:45:57 by paugonca          #+#    #+#             */
-/*   Updated: 2023/05/03 12:14:03 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:26:43 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	print_list(t_list **stack)
 	if (!*stack)
 		return ;
 	current = *stack;
-	while (current != NULL)
+	while (current)
 	{
 		printf("%d\n", current->content);
 		current = current->next;

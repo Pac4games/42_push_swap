@@ -6,7 +6,7 @@
 #    By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/30 15:36:54 by paugonca          #+#    #+#              #
-#    Updated: 2023/04/28 20:41:08 by paugonca         ###   ########.fr        #
+#    Updated: 2023/05/03 16:17:56 by paugonca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRC_NAME	= main.c			\
 			  sort_utils.c		\
 			  stack_utils.c		\
 			  swap_utils.c		\
+			  push_utils.c		\
 			  rotate_utils.c	\
 			  r_rotate_utils.c
 

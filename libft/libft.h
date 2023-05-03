@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 11:25:39 by paugonca          #+#    #+#             */
-/*   Updated: 2023/04/27 15:55:12 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:26:14 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 //Adaptated for stacks in push_swap
 typedef struct s_list
 {
-	int			content;
+	int				content;
 	int				index;
 	struct s_list	*next;
 }					t_list;
@@ -65,10 +65,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstclear(t_list **lst);
 void	ft_lstdelone(t_list *lst);
-void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstlast(t_list *lst);
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-t_list	*ft_lstnew(void *content);
+t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);
 
 #endif

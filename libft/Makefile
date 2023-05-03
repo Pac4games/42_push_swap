@@ -6,7 +6,7 @@
 #    By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 14:56:07 by paugonca          #+#    #+#              #
-#    Updated: 2023/04/04 14:56:34 by paugonca         ###   ########.fr        #
+#    Updated: 2023/05/03 16:16:19 by paugonca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ ft_strdup ft_striteri ft_strjoin ft_strlcat ft_strlcpy ft_strlen ft_strmapi\
 ft_strncmp ft_strnstr ft_strrchr ft_strtrim ft_substr ft_tolower ft_toupper
 
 BONUS = ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back\
-ft_lstdelone ft_lstclear ft_lstiter ft_lstmap
+ft_lstdelone ft_lstclear
 
 CC = cc
 RM = rm -f

@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 15:03:25 by paugonca          #+#    #+#             */
-/*   Updated: 2023/04/28 16:01:46 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:33:47 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	swap(t_list *stack)
 {
 	int	hold;
 
-	if (stack == NULL || stack->next)
+	if (!stack || !(stack->next))
 		return ;
 	hold = stack->content;
 	stack->content = stack->next->content;
