@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:31:06 by paugonca          #+#    #+#             */
-/*   Updated: 2023/04/30 16:00:01 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/03 12:14:42 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 int			check_args(int ac, char **av);
 //extra_utils.c
 long long	ft_atoll(const char *num);
+void		print_list(t_list **stack);
 //stack_utils.c
 t_list		*stack_putval(int ac, char **av);
 void		stack_check_pos(t_list **stack_a, t_list **stack_b, int p, int i);

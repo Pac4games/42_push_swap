@@ -6,13 +6,13 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:16:33 by paugonca          #+#    #+#             */
-/*   Updated: 2023/04/30 15:59:54 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/03 12:16:00 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-staic t_list	*stack_create(int num)
+static t_list	*stack_create(int num)
 {
 	t_list	*res;
 
@@ -73,9 +73,7 @@ static t_list	*get_next_min(t_list **stack)
 void	stack_get_index(t_list **stack)	
 {
 	t_list	*tmp;
-	int		p;
 
-	p = 0;
 	tmp = get_next_min(stack);
 	while (tmp)
 	{

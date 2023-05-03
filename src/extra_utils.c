@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:45:57 by paugonca          #+#    #+#             */
-/*   Updated: 2023/04/28 20:42:59 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/03 12:14:03 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,18 @@ int	get_min_int(t_list *stack)
 		tmp = tmp->next;
 	}
 	return (p);
+}
+
+void	print_list(t_list **stack)
+{
+	t_list	*current;
+
+	if (!*stack)
+		return ;
+	current = *stack;
+	while (current != NULL)
+	{
+		printf("%d\n", current->content);
+		current = current->next;
+	}
 }
