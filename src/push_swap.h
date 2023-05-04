@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:31:06 by paugonca          #+#    #+#             */
-/*   Updated: 2023/05/03 12:14:42 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/04 12:01:26 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,12 @@ int			check_args(int ac, char **av);
 //extra_utils.c
 long long	ft_atoll(const char *num);
 void		print_list(t_list **stack);
+int			get_max_int(t_list *stack);
+int			get_min_int(t_list *stack);
 //stack_utils.c
 t_list		*stack_putval(int ac, char **av);
 void		stack_check_pos(t_list **stack_a, t_list **stack_b, int p, int i);
+void		stack_get_index(t_list **stack);
 //sort_utils.c
 void		sort_start(t_list **stack_a, t_list **stack_b, size_t size);
 //Moves
@@ -45,7 +48,5 @@ void		r_rotate_a(t_list **stack_a);
 void		r_rotate_b(t_list **stack_b);
 void		r_rotate_ab(t_list **stack_a, t_list **stack_b);
 //Num utils
-int			get_max_int(t_list *stack);
-int			get_min_int(t_list *stack);
 
 #endif

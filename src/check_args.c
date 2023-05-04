@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 10:44:13 by paugonca          #+#    #+#             */
-/*   Updated: 2023/04/30 14:52:26 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/04 12:12:37 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ static int	check_nums(int ac, char **av)
 		while (av[p][i])
 		{
 			if (!ft_isdigit(av[p][i]))
-				return (0);
+				return (FALSE);
 			i++;
 		}
 		p++;
 	}
-	return (1);
+	return (TRUE);
 }
 
 static int	check_limit(int ac, char **av)
@@ -42,10 +42,10 @@ static int	check_limit(int ac, char **av)
 	while (p < ac)
 	{
 		if (ft_atoi(av[p]) < INT_MIN || ft_atoi(av[p]) > INT_MAX)
-			return (0);
+			return (FALSE);
 		p++;
 	}
-	return (1);
+	return (TRUE);
 }
 
 static int	check_dups(int ac, char **av)
@@ -60,38 +60,22 @@ static int	check_dups(int ac, char **av)
 		while (i < ac)
 		{
 			if (ft_atoi(av[p]) == ft_atoi(av[i]))
-				return (0);
+				return (FALSE);
 			i++;
 		}
 		p++;
 		i = p + 1;
 	}
-	return (1);
+	return (TRUE);
 }
 
 int	check_args(int ac, char **av)
 {
 	if (!check_nums(ac, av))
-		return (0);
+		return (FALSE);
 	else if (!check_limit(ac, av))
-		return (0);
+		return (FALSE);
 	else if (!check_dups(ac, av))
-		return (0);
-	return (1);
+		return (FALSE);
+	return (TRUE);
 }
-/*
-int	main(int ac, char **av)
-{
-	if (ac < 3)
-		printf("Not enough args\n");
-	else if (!check_nums(ac, av))
-		printf("Not all args are numbers\n");
-	else if (!check_limit(ac, av))
-		printf("Args exceeded the int limit\n");
-	else if (!check_dups(ac, av))
-		printf("Dupped args, you dirty hacker\n");
-	else
-		printf("The args are valid!\n");
-	return (0);
-}
-*/
