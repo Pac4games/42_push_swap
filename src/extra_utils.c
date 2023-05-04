@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:45:57 by paugonca          #+#    #+#             */
-/*   Updated: 2023/05/03 16:26:43 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:58:15 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,28 @@
 //Same thing as ft_atoi, but for long long ints.
 long long	ft_atoll(const char *num)
 {
+	int			i;
+	int			sig;
 	long long	res;
-	int			p;
-	int			sign;
 
+	i = 0;
+	sig = 1;
 	res = 0;
-	p = 0;
-	sign = 1;
-	while (num[p] == 32 || num[p] == '\n' || num[p] == '\f' || num[p] == '\r'
-		|| num[p] == '\t' || num[p] == '\v')
-		p++;
-	if (num[p] == '+' || num[p] == '-')
+	while ((num[i] == 32) || (num[i] == '\n') || (num[i] == '\t') || \
+			(num[i] == '\v') || (num[i] == '\f') || (num[i] == '\r'))
+			i++;
+	if ((num[i] == '+') || (num[i] == '-'))
 	{
-		if (num[p] == '-')
-			sign = -1;
-		p++;
+		if (num[i] == '-')
+			sig = -1;
+		i++;
 	}
-	while (num[p] >= '0' && num[p] <= '9')
+	while (num[i] >= '0' && num[i] <= '9')
 	{
-		res = (res * 10) + (num[p] - 48);
-		p--;
+		res = (res * 10) + (num[i] - '0');
+		i++;
 	}
-	return (res * sign);
+	return (res * sig);
 }
 
 int	get_max_int(t_list *stack)
