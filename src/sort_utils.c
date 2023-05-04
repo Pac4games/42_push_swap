@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:40:29 by paugonca          #+#    #+#             */
-/*   Updated: 2023/05/04 12:02:07 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/04 15:52:47 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ static void	sort_5plus(t_list **stack_a, t_list **stack_b, size_t size)
 	size_t	p;
 	size_t	i;
 
-	p = 0;
 	stack_get_index(stack_a);
+	p = 0;
 	while (!is_sorted(stack_a))
 	{
 		i = 0;
