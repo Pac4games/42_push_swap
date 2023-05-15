@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:16:33 by paugonca          #+#    #+#             */
-/*   Updated: 2023/05/03 12:16:00 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/15 16:31:56 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,13 @@ static t_list	*get_next_min(t_list **stack)
 void	stack_get_index(t_list **stack)	
 {
 	t_list	*tmp;
+	int		p;
 
 	tmp = get_next_min(stack);
+	p = 0;
 	while (tmp)
 	{
-		tmp->index++;
+		tmp->index = p++;
 		tmp = get_next_min(stack);
 	}
 }

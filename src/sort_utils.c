@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:40:29 by paugonca          #+#    #+#             */
-/*   Updated: 2023/05/04 15:52:47 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/14 16:10:24 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	sort_4t5(t_list **stack_a, t_list **stack_b, int size)
 		push_a(stack_a, stack_b);
 }
 
-static void	sort_5plus(t_list **stack_a, t_list **stack_b, size_t size)
+static void	sort_radix(t_list **stack_a, t_list **stack_b, size_t size)
 {
 	size_t	p;
 	size_t	i;
@@ -97,5 +97,5 @@ void	sort_start(t_list **stack_a, t_list **stack_b, size_t size)
 	else if (size == 4 || size == 5)
 		sort_4t5(stack_a, stack_b, size);
 	else if (size > 5)
-		sort_5plus(stack_a, stack_b, size);
+		sort_radix(stack_a, stack_b, size);
 }
