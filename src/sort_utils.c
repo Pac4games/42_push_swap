@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:40:29 by paugonca          #+#    #+#             */
-/*   Updated: 2023/05/14 16:10:24 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/18 08:55:43 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	sort_3(t_list **stack)
 
 	if (is_sorted(stack))
 		return ;
-	max = get_max_int(*stack); 
+	max = get_max_int(*stack);
 	if ((*stack)->content == max)
 		rotate_a(stack);
 	else if ((*stack)->next->content == max)

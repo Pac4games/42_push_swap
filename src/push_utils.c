@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 20:49:32 by paugonca          #+#    #+#             */
-/*   Updated: 2023/05/03 16:52:58 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/18 08:55:10 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	push(t_list **src, t_list **dst)
 	t_list	*tmp;
 
 	if (!(*src))
-		return;
+		return ;
 	tmp = (*src)->next;
 	(*src)->next = *dst;
 	*dst = *src;

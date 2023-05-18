@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 15:39:55 by paugonca          #+#    #+#             */
-/*   Updated: 2023/04/28 16:01:21 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/18 08:56:08 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	rotate(t_list **stack)
 	t_list	*bot;
 
 	if (*stack == NULL || (*stack)->next == NULL)
-		return;
+		return ;
 	top = *stack;
 	*stack = (*stack)->next;
 	bot = ft_lstlast(*stack);
