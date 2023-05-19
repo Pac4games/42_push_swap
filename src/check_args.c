@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 10:44:13 by paugonca          #+#    #+#             */
-/*   Updated: 2023/05/04 15:00:10 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/19 11:42:17 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	check_nums(int ac, char **av)
 	while (p < ac)
 	{
 		i = 0;
-		if (av[p][i] == '-' || av[p][i] == '+')
+		if ((av[p][i] == '-' || av[p][i] == '+') && ft_strlen(av[p]) > 1)
 			i++;
 		while (av[p][i])
 		{
