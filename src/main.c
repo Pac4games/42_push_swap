@@ -6,18 +6,21 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 14:29:14 by paugonca          #+#    #+#             */
-/*   Updated: 2023/05/18 08:52:15 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/19 11:59:38 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
 
 int	main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
 
-	if (!check_args(ac, av) || ac < 3)
+	if (ac < 2)
+		return (EXIT_FAILURE);
+	else if (!check_args(ac, av) || ac == 3)
 	{
 		ft_putstr_fd("Error\n", 2);
 		return (EXIT_FAILURE);
