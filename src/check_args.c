@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 10:44:13 by paugonca          #+#    #+#             */
-/*   Updated: 2023/05/19 11:42:17 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/05/25 12:36:20 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ static int	check_nums(int ac, char **av)
 				return (FALSE);
 			i++;
 		}
+		if ((av[p][0] == '-' || av[p][0] == '+') && av[p][1] == '0'
+				&& ft_strlen(av[p]) == 2)
+			return (FALSE);
 		p++;
 	}
 	return (TRUE);
